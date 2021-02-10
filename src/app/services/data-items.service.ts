@@ -7,15 +7,13 @@ import {Item} from "../models/item";
   providedIn: 'root'
 })
 export class DataItemsService {
-  private apiUrl = 'http://localhost:3000/items';
-
   constructor(private http: HttpClient) {}
 
   getItems(): Observable<Item[]> {
-    return this.http.get<Item[]>(this.apiUrl);
+    return this.http.get<Item[]>('items');
   }
   getItem(id:number):Observable<Item> {
-    const itemUrl = `${this.apiUrl}/${id}`
+    const itemUrl = `items/${id}`
     return this.http.get<Item>(itemUrl);
   }
 }

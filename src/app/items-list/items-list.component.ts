@@ -15,7 +15,7 @@ export class ItemsListComponent implements OnInit {
   items$: Observable<Item[]>;
   total$: Observable<number>;
 
-  displayedColumns: string[] = ['itemName', 'itemDescription', 'itemPrice', 'itemCount', 'itemTotal','itemDetailLink'];
+  displayedColumns: string[] = ['itemName', 'itemDescription', 'itemPrice', 'itemCount', 'itemTotal','itemDeleteLink','itemDetailLink'];
   constructor(private dataItemsService: DataItemsService) { }
   getTotalPrice() {
     this.total$= this.items$.pipe(map(item => item.reduce((acc,val) => acc+val.total, 0)))

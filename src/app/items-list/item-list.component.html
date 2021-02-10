@@ -29,8 +29,17 @@
     <ng-container matColumnDef="itemDetailLink">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let item">
-            <a routerLink="item-detail/{{item.id}}">
+            <a routerLink="items/{{item.id}}">
                 <mat-icon>keyboard_arrow_right</mat-icon>
+            </a>
+        </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+    <ng-container matColumnDef="itemDeleteLink">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let item">
+            <a routerLink="items/{{item.id}}">
+                <mat-icon>delete</mat-icon>
             </a>
         </td>
         <td mat-footer-cell *matFooterCellDef></td>

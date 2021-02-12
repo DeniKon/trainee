@@ -1,4 +1,8 @@
-<h3>Items list</h3>
+<div class="container">
+    <div class="addButtonWrapper">
+        <button mat-button>Add</button>
+    </div>
+    <div class="table-items-list">
 <table mat-table [dataSource]="items$" class="mat-elevation-z8">
     <ng-container matColumnDef="itemName">
         <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -29,7 +33,7 @@
     <ng-container matColumnDef="itemDetailLink">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let item">
-            <a routerLink="items/{{item.id}}">
+            <a routerLink="{{item.id}}">
                 <mat-icon>keyboard_arrow_right</mat-icon>
             </a>
         </td>
@@ -38,7 +42,7 @@
     <ng-container matColumnDef="itemDeleteLink">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let item">
-            <a routerLink="items/{{item.id}}">
+            <a routerLink="{{item.id}}">
                 <mat-icon>delete</mat-icon>
             </a>
         </td>
@@ -49,4 +53,7 @@
     <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
 
 </table>
-<button mat-button (click)="getTotalPrice()">total</button>
+</div>
+
+</div>
+
